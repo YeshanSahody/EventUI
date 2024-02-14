@@ -7,8 +7,6 @@ import { LoginComponent } from './components/login/login.component';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { FaqComponent } from './components/faq/faq.component';
 
-
-
 const routes: Routes = [
   { path: '', component: LoginComponent },
 
@@ -23,6 +21,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
