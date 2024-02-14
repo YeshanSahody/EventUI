@@ -1,0 +1,25 @@
+<sdwds-header applicationName="SD Events">
+  <sdwds-header-navbar class="nav-tabs b-0">
+    <!-- <sdwds-header-navbar-item class="d-none d-sm-block">
+        <strong>Hey there,</strong>
+      </sdwds-header-navbar-item> -->
+    <sdwds-header-navbar-item class="d-none d-sm-block">
+      <strong>Hello {{firstName}}, welcome back</strong>
+    </sdwds-header-navbar-item>
+    <sdwds-header-navbar-divider class="d-none d-sm-block"></sdwds-header-navbar-divider>
+
+    <sdwds-header-navbar-item class="px-1 d-none d-sm-block">
+      <a class="nav-link" ngbTooltip="User Guide" placement="bottom" [routerLink]="['/faq']" routerLinkActive="active">
+        <i class="icons8-help-desk"></i>
+      </a>
+    </sdwds-header-navbar-item>
+    <sdwds-header-navbar-divider class="d-none d-sm-block"></sdwds-header-navbar-divider>
+
+    <sdwds-header-navbar-item class="px-1" (click)="logout()">
+      <a class="nav-link" ngbTooltip="Logout" placement="bottom">
+        <i class="icons8-logout-rounded"></i>
+      </a>
+    </sdwds-header-navbar-item>
+
+  </sdwds-header-navbar>
+</sdwds-header>
