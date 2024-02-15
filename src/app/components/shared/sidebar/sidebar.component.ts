@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { UserResponse } from 'src/app/models/user/user-response';
 
 
 @Component({

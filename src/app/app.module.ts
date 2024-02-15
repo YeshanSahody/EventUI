@@ -21,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHeaderProfileLinkComponent, SdwdsHeaderProfileListComponent, SdwdsHeaderProfileSelectComponent, } from '@sdworx/sdwds/header-profile';
-import { InterceptorsProviders } from './interceptors/interceptors';
+import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,12 @@ import { InterceptorsProviders } from './interceptors/interceptors';
     AdminDashboardComponent,
     NavbarComponent,
     SidebarComponent,
+    AnalyticsChartsComponent,
+    AnalyticsComponent,
   ],
   imports: [
-    SdwdsHeaderComponent,
     HighchartsChartModule,
-    SdwdsHeaderNavbarComponent,
     CommonModule,
-    FormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -73,7 +73,6 @@ import { InterceptorsProviders } from './interceptors/interceptors';
       provide: LocationStrategy,
       useClass: HashLocationStrategy,
     },
-    InterceptorsProviders,
   ],
   bootstrap: [AppComponent],
 })
