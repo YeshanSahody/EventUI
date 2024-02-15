@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHeaderProfileLinkComponent, SdwdsHeaderProfileListComponent, SdwdsHeaderProfileSelectComponent, } from '@sdworx/sdwds/header-profile';
+import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHe
     AdminDashboardComponent,
     NavbarComponent,
     SidebarComponent,
+    AnalyticsChartsComponent,
+    AnalyticsComponent,
   ],
   imports: [
     HighchartsChartModule,
