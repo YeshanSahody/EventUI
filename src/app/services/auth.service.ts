@@ -31,7 +31,7 @@ export class AuthService {
       };
       this.storageService.set('token', result['token']);
       this.storageService.set('user', userObject);
-      if (userObject.role as string === 'Administrator') {
+      if (userObject.role as string === 'Super Admin') {
         this.router.navigate(['/admin-dashboard']);
         this.loggedInSubject.next(true);
       }

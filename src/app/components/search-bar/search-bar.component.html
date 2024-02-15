@@ -1,0 +1,202 @@
+<div class="container">
+    <div class="input-group mb-3 align-items-center">
+      <!-- Search Bar -->
+      <input type="text" class="form-control" placeholder="Search Events..." [(ngModel)]="searchQuery" name="searchQuery">
+      <div class="input-group-append">
+        <!-- Search Button -->
+        <!-- Support Button -->
+        <!-- Profile Dropdown Button -->
+        <button class="btn btn-outline-secondary btn-search btn-lg" type="button" (click)="search()" data-toggle="tooltip" title="Search">
+          <img src="../../../assets/images/search0.jpg" style="width: 30px; height: 30px;" alt="Search">
+        </button>
+      </div>
+      
+        <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+          <img src="../../../assets/images/profile0.jpg" style="width: 30px; height: 30px;" alt="My Profile">
+        </button>
+        
+        <!-- Profile Dropdown Button -->
+  <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Notification" (click)="toggleNotification()">
+    <img src="../../../assets/images/notification0.jpg" style="width: 30px; height: 30px;" alt="My Notification">
+    <span class="notification-badge">2</span>
+  </button>
+  
+  <!-- Add a section to display dummy notification data -->
+  <div *ngIf="isNotificationOpen" class="notification-data">
+    <!-- Dummy notification data for event management system -->
+    <div class="notification" (mouseover)="hoverNotification = true" (mouseleave)="hoverNotification = false" [class.hover]="hoverNotification">
+      <span class="notification-icon">
+        <i class="illustrative-period-plans " style="width: 20px; height: 20px;"></i>
+      </span>
+      <span class="notification-text">
+        New event created: "Conference on Artificial Intelligence" <!-- Event name -->
+      </span>
+    </div>
+    <div class="notification" (mouseover)="hoverNotification2 = true" (mouseleave)="hoverNotification2 = false" [class.hover]="hoverNotification2">
+      <span class="notification-icon">
+        <i class="illustrative-write-document " style="width: 20px; height: 20px;"></i> <!-- Icon for important notification -->
+      </span>
+      <span class="notification-text">
+        Reminder: Upcoming deadline for event registration <!-- Notification text -->
+      </span>
+    </div>
+  </div>
+  
+  
+  
+        <!-- Within your existing code, add a new button for the profile dropdown -->
+  <!-- <button class="btn btn-outline-secondary btn-profile btn-lg" type="button" data-toggle="tooltip" title="My Profile" (click)="toggleProfileDropdown()">
+    <i class="far fa-user"></i>
+  </button> -->
+  
+  <!-- Add a new section for the profile dropdown menu -->
+  <div *ngIf="isProfileDropdownOpen" class="profile-dropdown">
+    <ul class="dropdown__list">
+      
+      <li class="dropdown__list-item">
+        <a href="/myprofile" class="dropdown__link">
+          <span class="dropdown__icon">
+            <i class="illustrative-biometric-authorisation" style="width: 20px; height: 20px;"></i>
+          </span>
+          <span class="dropdown__title">My Profile</span>
+        </a>
+      </li>
+    
+      <li class="dropdown__list-item">
+        <a href="/userguide" class="dropdown__link">
+          <span class="dropdown__icon">
+            <i class="illustrative-error " style="width: 20px; height: 20px;"></i>
+          </span>
+          <span class="dropdown__title">User Guide</span>
+        </a>
+      </li>
+  
+      <li class="dropdown__list-item">
+        <a href="/login" class="dropdown__link">
+          <span class="dropdown__icon">
+            <i class="illustrative-clock-in-out " style="width: 20px; height: 20px;"></i>
+          </span>
+          <span class="dropdown__title">Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  
+        
+        <!-- Back to Top Button -->
+        <!-- <button class="btn btn-outline-secondary btn-back-to-top" type="button" (click)="scrollToTop()">
+          <i class="bi bi-arrow-up-short" style="color: #007bff;"></i>
+          Back to Top
+        </button> -->
+      </div>
+      <!-- Circular Icon with Image for Chatbox -->
+      <div class="chat-icon" (click)="toggleChatbox()">
+        <img src="../../../assets/images/384 px.jpg" alt="Chat Icon" class="chat-icon-image" >
+       
+      </div>
+      <!-- ... rest of the code ... -->
+  
+  
+    </div>
+  
+   
+      <!-- Chatbox Code -->
+      <div *ngIf="!isClosed" class="chatbox">
+        <div class="chat-header">
+          <div class="chat-header-content">
+            <!-- <span class="avatar"> -->
+              <!-- Add max-width and max-height styles to the image -->
+              <!-- <img src="assets/images/user3.jpg" alt="Avatar image or a picture of a person" style="max-width: 50px; max-height: 50px;" />
+            </span> -->
+   
+            <div class="placeholder-glow btn-lg">
+              <!-- <span class="avatar w-128 avatar-primary"></span> -->
+              <!-- <i class="icons8-o-contacts btn-lg "></i> -->
+             
+            </div>
+            <!-- <span class="label"><strong style="color: white;">Abdurrahman Gurib</strong></span> -->
+            <i class="icons8-o-contacts btn-lg"></i><span class="label" style="font-size: larger;"><strong style="color: white;">Abdurrahman Gurib</strong></span>
+  
+  
+  
+          </div>
+          <div>
+            <button class="btn btn-link" (click)="onClose()">
+              <i class="icons8-o-close"></i>
+            </button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="chat-body">
+          <!-- Chat Body Content -->
+   
+          <div class="chat-message-list  sd-scrollbar" style="height: 411px">
+            <div class="conversation-date">01 January 2023</div>
+            <div class="message-sent">
+              <div class="message-content">
+                <div class="message">Message Hi Noor</div>
+                <div class="time-sent">13.00</div>
+              </div>
+            </div>
+            <div class="message-sent">
+              <div class="message-content">
+                <div class="message">How can I help you?</div>
+                <div class="time-sent">13.00</div>
+              </div>
+            </div>
+            <div class="message-receive">
+              <div class="message-content">
+                <div class="message">I got issues in registering for Fun at Worx event</div>
+                <div class="time-wrapper">
+                  <div class="time-sent">13:00</div>
+                  <i class="icons8-f-ok"></i>
+                </div>
+              </div>
+            </div>
+            <div class="message-sent">
+              <div class="message-content">
+                <div class="message">Your query is safely registered, we will get back to you </div>
+                <div class="time-sent">13.00</div>
+              </div>
+            </div>
+            <div class="conversation-date">02 January 2023</div>
+            <div class="message-receive">
+              <div class="message-content">
+                <div class="message">Thank You</div>
+                <div class="time-wrapper">
+                  <div class="time-sent">13:00</div>
+                  <i class="icons8-o-ok"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+   
+        </div>
+        <div class="divider"></div>
+  
+        <div class="chat-suggestion">
+          <div class="suggestion-title" (click)="toggleSuggestions()">
+            <i [ngClass]="{ 'icons8-o-collapse-arrow': isExpanded, 'icons8-o-expand-arrow': !isExpanded }"></i>
+            <div class="label">Suggestions</div>
+          </div>
+          <div *ngIf="isExpanded" class="suggestions">
+            <div class="flex-columns gap-2">
+              <button class="btn btn-tertiary btn-sm" (click)="insertSuggestion('Page 404')">Page 404</button>
+              <button class="btn btn-tertiary btn-sm" (click)="insertSuggestion('Registration issues')">Registration issues</button>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="divider"></div>
+        <div class="chat-message-entry">
+          <div class="form-group">
+            <input type="text" class="form-control" id="txtTextMedium" placeholder="Your message" />
+          </div>
+          <button class="btn btn-primary">
+            <i class="icons8-o-sent"></i>
+          </button>
+        </div>
+      </div>
+   

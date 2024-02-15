@@ -22,6 +22,18 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHeaderProfileLinkComponent, SdwdsHeaderProfileListComponent, SdwdsHeaderProfileSelectComponent, } from '@sdworx/sdwds/header-profile';
 import { InterceptorsProviders } from './interceptors/interceptors';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
+
+import { FinanceComponent } from './components/finance/finance.component';
+import { EventsComponent } from './components/events/events.component';
+import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +41,17 @@ import { InterceptorsProviders } from './interceptors/interceptors';
     AdminDashboardComponent,
     NavbarComponent,
     SidebarComponent,
+    AnalyticsComponent,
+    AnalyticsChartsComponent,
+    FinanceComponent,
+    
+    GroupLeadersComponent,
+          LogoutComponent,
+          MyprofileComponent,
+          PagenotfoundComponent,
+          SearchBarComponent,
+          SignUpComponent,
+          TeamLeadersComponent,
   ],
   imports: [
     SdwdsHeaderComponent,
@@ -60,6 +83,7 @@ import { InterceptorsProviders } from './interceptors/interceptors';
     SdwdsHeaderProfileSelectComponent,
     SdwdsHeaderProfileListComponent,
     NgbDropdownModule,
+    EventsComponent,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
