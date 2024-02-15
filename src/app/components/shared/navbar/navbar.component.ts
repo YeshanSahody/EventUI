@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -11,6 +13,8 @@ export class NavbarComponent {
   firstName: string = '';
   lastName: string = '';
   constructor(
+    private storageService: StorageService,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -33,5 +37,6 @@ export class NavbarComponent {
   }
 
   logout() {
+    this.authService.logout();
   }
 }
