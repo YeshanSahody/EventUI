@@ -1,0 +1,62 @@
+
+<img src="../../../assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 80px; height: auto;">
+
+<div class="container" style="padding-left: calc(var(--bs-gutter-x) * 4.5);">
+  <form role="form" (ngSubmit)="submitForm()" [class.was-validated]="submitted">
+    <h6 class="form-heading">Event Details</h6>
+    <div class="form-group">
+      <label class="form-label" for="eventName">Event Name</label>
+      <input class="form-control" id="eventName" type="text" placeholder="Enter Event Name" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="eventDescription">Event Description</label>
+      <textarea class="form-control" id="eventDescription" rows="3" placeholder="Enter Event Description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="startDate">Start Date</label>
+      <input class="form-control" id="startDate" type="date" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="startTime">Start Time</label>
+      <input class="form-control" id="startTime" type="time" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="endDate">End Date</label>
+      <input class="form-control" id="endDate" type="date" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="endTime">End Time</label>
+      <input class="form-control" id="endTime" type="time" required />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="eventStatus">Event Status</label>
+      <select class="form-select" id="eventStatus" required>
+        <option value="">Select Event Status</option>
+        <option value="scheduled">Scheduled</option>
+        <option value="ongoing">Ongoing</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="eventType">Event Type</label>
+      <select class="form-select" id="eventType" required>
+        <option value="">Select Event Type</option>
+        <option value="onsite">Onsite</option>
+        <option value="virtual">Virtual</option>
+        <option value="hybrid">Hybrid</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="locationMap">Location Map</label>
+      <input class="form-control" id="locationMap" type="text" placeholder="Enter Location Map URL" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="attachments">Attachments</label>
+      <input class="form-control" id="attachments" type="file" accept=".jpg, .jpeg, .png, .pdf, .xls, .xlsx, .doc, .docx" multiple />
+    </div>
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="reset" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>

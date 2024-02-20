@@ -1,0 +1,258 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+.container {
+    margin-left: 20em;
+    margin-top: 2em;
+  }
+  // styles.scss
+
+// .form-control {
+//   width: 10px; // Customize the width as per your requirement
+// }
+.notification-data {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: box-shadow 0.3s ease; /* Add transition effect for smooth hover */
+}
+
+.notification:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Apply hover effect */
+}
+
+.notification.hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Apply hover effect */
+}
+
+.notification-icon {
+  margin-right: 10px;
+  color: #007bff; /* Color for notification icons */
+}
+
+.notification-text {
+  color: #333;
+}
+
+
+
+
+
+  .btn {
+    position: relative; // Ensure relative positioning for absolute positioning of the badge
+    padding: 10px; // Remove default padding
+    border: none; // Remove default border
+    // background-color: transparent; // Transparent background
+    
+    img {
+      width: 32px; // Adjust width of the image
+      height: 32px; // Adjust height of the image
+      border-radius: 50%; // Make the image circular if needed
+      vertical-align: middle; // Align the image vertically within the button
+    }
+
+    
+  
+  
+
+
+
+
+
+    
+    .notification-badge {
+      position: absolute; // Position the badge relative to the button
+      top: 0px; // Adjust vertical position
+      right: 1px; // Adjust horizontal position
+      background-color: #ea004d;
+      color: white;
+      border-radius: 50%; // Make it fully circular
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+    
+  }
+  .label.label-white {
+    color: white !important; /* Add !important to override any other conflicting styles */
+  }
+  
+  // .notification-badge {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   background-color: red;
+  //   color: white;
+  //   border-radius: 50%;
+  //   width: 20px;
+  //   height: 20px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   font-size: 12px;
+  // }
+  
+  // .btn-back-to-top {
+  //   position: fixed;
+  //   bottom: 20px; /* Adjust as needed */
+  //   background-color: #f1916a; 
+  //   right: 20px; /* Adjust as needed */
+  // }
+  
+// SCSS for Profile Dropdown
+.profile-dropdown {
+  position: absolute;
+  top: 100%; // Position dropdown below the button
+  right: 0; // Align with the right side of the button
+  z-index: 1000; // Ensure it's above other content
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown__list-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown__list-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown__icon {
+  margin-right: 10px;
+}
+
+.dropdown__title {
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdown__icon i {
+  font-size: 18px;
+  color: #007bff;
+}
+
+  // CSS for Chat Icon
+// CSS for Chat Icon
+.chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+   // Set background color to blue
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000; // Ensure it's above other content
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Add shadow for better visibility
+}
+
+.chat-icon img {
+  width: 70%; // Adjust size of the image to fit within the circle
+  height: auto; // Ensure aspect ratio is maintained
+  // border-radius: 10%; // Make the image circular
+}
+
+.chat-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+  /* Styles for the chatbox */
+  .chatbox {
+    position: fixed;
+    bottom: 70px; /* Adjust this value to fit your layout */
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color:#870b58;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .chat-body {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .chat-suggestion {
+    padding: 10px;
+  }
+  
+  .suggestion-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #870b58;
+  }
+  
+  .suggestions {
+    padding-top: 10px;
+  }
+  
+  .chat-message-entry {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .chat-message-entry input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  /* Example styling for input and button */
+  .chat-message-entry button {
+    background-color: #870b58;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  /* You may need to adjust the styles based on your specific requirements */
+  
