@@ -18,7 +18,7 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
 
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'event-display', component: EventDisplayComponent },
@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'event-registration', component: EventRegistrationComponent },
   { path: 'myprofile', component: MyprofileComponent },
+  
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

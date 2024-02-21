@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
-
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,14 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'MySkills';
   isAuthenticated: boolean = false;
+  showSidebar: boolean = true;
 
-  constructor(location: Location, private router: Router,) {
-    this.router.events.subscribe(() => {
-      this.isAuthenticated = location.path() !== '' ? true : false;
+  constructor(location: Location, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Check if the current route is the login page
+        this.showSidebar = !event.url.includes('#/login'); // Modify this condition based on your login page route
+      }
     });
   }
 }
