@@ -32,6 +32,9 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { EventDisplayComponent } from './components/event-display/event-display.component';
 import { LoginComponent } from './components/login/login.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     GroupLeadersComponent,
     ReportsComponent,
     EventDisplayComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SignUpComponent
   ],
 
   imports: [
@@ -95,3 +99,5 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 export class AppModule {
   applicationName: string = 'SD events';
 }
+export class SignUpModule { }
+
