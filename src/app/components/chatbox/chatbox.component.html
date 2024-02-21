@@ -1,0 +1,21 @@
+<app-chatbox><</app-chatbox>
+<!-- chatbox.component.html -->
+<div class="chatbox">
+    <div class="chat-body">
+      <div *ngIf="aiResponse" class="message-receive">
+        <div class="message-content">
+          <div class="message">{{ aiResponse }}</div>
+          <div class="time-sent">AI Response Time</div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-message-entry">
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="userInput" placeholder="Your message" />
+      </div>
+      <button class="btn btn-primary" (click)="sendMessage()">
+        Send
+      </button>
+    </div>
+  </div>
+  

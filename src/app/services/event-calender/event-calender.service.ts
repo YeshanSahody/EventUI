@@ -2,7 +2,7 @@
 
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICalendarEvent } from '../../model/event.model';
+import { ICalendarEvent } from '../../models/event.model';
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({

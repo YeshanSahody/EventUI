@@ -1,0 +1,53 @@
+<!-- communication.component.html -->
+<div class="container">
+  <img src="../../../assets/images/spark/03.png" alt="Your Image" style="position: fixed; top: 10px; right: 10px; width: 80px; height: auto;">
+
+<div class="data-grid-container">
+  <!-- Floating Filters -->
+  <div class="floating-filters">
+    <label for="ticketIdFilter">Ticket ID:</label>
+    <input type="text" id="ticketIdFilter" [(ngModel)]="filters.ticketId">
+
+    <label for="issuesEncounteredFilter">Issues Encountered:</label>
+    <input type="text" id="issuesEncounteredFilter" [(ngModel)]="filters.issuesEncountered">
+
+    <label for="departmentsFilter">Departments:</label>
+    <input type="text" id="departmentsFilter" [(ngModel)]="filters.departments">
+
+    <label for="severityFilter">Severity:</label>
+    <select id="severityFilter" [(ngModel)]="filters.severity">
+      <option value="">All</option>
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+    </select>
+
+    <!-- Add more filters as needed -->
+
+    <button (click)="applyFilters()">Apply Filters</button>
+  </div>
+
+  <!-- Data Grid -->
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket ID</th>
+        <th>Issues Encountered</th>
+        <th>Departments</th>
+        <th>Severity</th>
+        <th>Status</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of filteredTickets">
+        <td>{{ ticket.id }}</td>
+        <td>{{ ticket.issuesEncountered }}</td>
+        <td>{{ ticket.departments }}</td>
+        <td>{{ ticket.severity }}</td>
+        <td>{{ ticket.status }}</td>
+        <!-- Display other ticket data -->
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<div>
+
+  <div class="container">
+
+    <div class="leaders-table">
+      <div class="table-header">
+        <h2>Team Leaders</h2>
+      </div>
+
+      <div class="table-row" *ngFor="let leader of leaders">
+        <div class="photo-column">
+          <div class="circle-photo">
+            <img [src]="leader.photo" alt="{{ leader.name }} Photo">
+          </div>
+        </div>
+
+        <div class="info-column">
+          <div class="name">{{ leader.name }}</div>
+          <button (click)="expandBio(leader)">Expand Bio</button>
+        </div>
+
+        <div class="bio-column" *ngIf="leader.expanded">
+          <p>{{ leader.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

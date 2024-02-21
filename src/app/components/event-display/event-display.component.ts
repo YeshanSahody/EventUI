@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BaseEvent } from '../../models/base-event.model'
+import { BaseEvent } from '../../models/base-event.model';
 
 @Component({
   selector: 'app-event-display',
