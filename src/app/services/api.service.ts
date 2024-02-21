@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+ 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   baseUrl = 'https://localhost:7008/api/';
-
+ 
   constructor(private http: HttpClient) {}
-
+ 
   endpoints: { [endpoint: string]: string | any } = {
     usersList: `${this.baseUrl}users`,
     addUser: `${this.baseUrl}users`,
@@ -32,7 +32,7 @@ export class ApiService {
     editCoaching: (id: string) => `${this.baseUrl}coaching/${id}`,
     deleteCoaching: (id: string) => `${this.baseUrl}coaching/${id}`,
   };
-
+ 
   request(
     url: endpointType,
     method: string,
@@ -42,13 +42,13 @@ export class ApiService {
     const finalUrl = !urlParams
       ? this.endpoints[url]
       : this.endpoints[url](urlParams);
-
+ 
     return !payload
       ? this.http.request(method, finalUrl)
       : this.http.request(method, finalUrl, { body: payload });
   }
 }
-
+ 
 export type endpointType =
   | 'usersList'
   | 'addUser'
