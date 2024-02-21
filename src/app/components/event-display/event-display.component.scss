@@ -18,6 +18,11 @@
   background-color: rgba(255, 255, 255, 0.15); /* Adjusted background for glassmorphism effect */
   backdrop-filter: blur(10px); /* Glassmorphism backdrop filter */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for zoom effect and box-shadow */
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex-direction: column;
+  display: flex;
 }
 
 .create-event-card {

@@ -23,6 +23,7 @@ export function containsSpecialCharacter(control: AbstractControl): { [key: stri
 export class LoginComponent {
   loginForm: FormGroup;
   otpForm: FormGroup;
+  isLoggedIn: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -37,12 +38,17 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
+      // Perform login logic here
+      // For demonstration, let's assume login is successful
+      this.isLoggedIn = true;
+  
       $('#otpModal').modal('show');
     } else {
       console.log('Form has validation errors');
       this.loginForm.get('password')?.markAsTouched();
     }
   }
+  
 
   verifyOTP() {
     console.log('OTP verification successful!');
