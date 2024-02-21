@@ -29,8 +29,9 @@ import { EventsComponent } from './components/events/events.component';
 import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
 import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
 import { ReportsComponent } from './components/reports/reports.component';
-
-
+import { EventDisplayComponent } from './components/event-display/event-display.component';
+import { LoginComponent } from './components/login/login.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,13 +45,13 @@ import { ReportsComponent } from './components/reports/reports.component';
     TeamLeadersComponent,
     GroupLeadersComponent,
     ReportsComponent,
-   
-    
+    EventDisplayComponent,
+    SearchBarComponent
   ],
+
   imports: [
     HighchartsChartModule,
     CommonModule,
-    
     BrowserModule,
     AppRoutingModule,
     FormsModule,

@@ -12,9 +12,9 @@ export class AuthService {
   private router = inject(Router);
   private storageService = inject(StorageService)
   private loggedInSubject = new BehaviorSubject<boolean>(false);
-
+ 
   login(result: { [key: string]: any }): void {
-
+ 
     const decodedToken = this.jwtHelperService.decodeToken(result['token']);
     if (decodedToken) {
       const userObject: UserResponse = {
@@ -41,14 +41,14 @@ export class AuthService {
       }
     }
   }
-
+ 
   logout(): void {
     this.storageService.clear();
     this.loggedInSubject.next(false);
     this.router.navigate(['/']);
-
+ 
   }
-
+ 
   getUserLoginStatus(): Observable<boolean> {
     return this.loggedInSubject.asObservable();
   }
