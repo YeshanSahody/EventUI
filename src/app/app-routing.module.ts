@@ -32,12 +32,6 @@ const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'event-registration', component: EventRegistrationComponent },
   { path: 'myprofile', component: MyprofileComponent },
-
-
-
-
-
-
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

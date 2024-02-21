@@ -43,14 +43,12 @@ import { ReportsComponent } from './components/reports/reports.component';
     FinanceComponent,
     TeamLeadersComponent,
     GroupLeadersComponent,
-    ReportsComponent,
-   
-    
+    ReportsComponent
   ],
+
   imports: [
     HighchartsChartModule,
     CommonModule,
-    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
