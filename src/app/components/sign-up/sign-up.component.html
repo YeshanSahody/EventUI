@@ -9,13 +9,15 @@
       padding-top: 20px;
       padding-bottom: 20px;
       position: relative; /* Make body a relative positioning context for absolute positioning of the image */
+      overflow-x: hidden; /* Hide horizontal scrollbar */
     }
 
     .top-right-image {
       position: absolute;
       top: 20px;
       right: 20px;
-      width: 100px; /* Adjust the width of the image as needed */
+      width: 10%; /* Adjust the width of the image as needed */
+      max-width: 100px; /* Set maximum width for responsiveness */
       height: auto; /* Maintain aspect ratio */
       z-index: 999; /* Ensure the image is above other content */
     }
@@ -26,7 +28,14 @@
 
     .container {
       margin: auto;
-      max-width: 600px;
+      max-width: 90%; /* Adjust max-width for responsiveness */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 100%; /* Adjust container width for smaller screens */
+      }
     }
   </style>
 </head>
@@ -82,3 +91,5 @@
       </div>
     </div>
   </div>
+</body>
+</html>
