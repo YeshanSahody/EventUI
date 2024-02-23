@@ -15,6 +15,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -32,12 +34,16 @@ const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'event-registration', component: EventRegistrationComponent },
   { path: 'myprofile', component: MyprofileComponent },
+  { path: 'forgetpassword', component: ForgetpasswordComponent },
+  { path: 'sign-up', component: SignUpComponent },
+
   
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 
 @NgModule({
+  
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
