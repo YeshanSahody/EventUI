@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,29 +8,25 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   applicationName: string = 'sd events';
   firstName: string = '';
-  lastName: string = '';
-  constructor(
-  ) { }
+  isLoggedIn: boolean = false; // Add this line
+  constructor() { }
 
   ngOnInit() {
     this.checkIfLoggedIn();
 
     this.firstName = "Ekantesh";
-
-
-    // Subscribe to the login status changes
-    // this.authService.getUserLoginStatus().subscribe((loggedIn) => {
-    //   if (!loggedIn) {
-    //     // Clear the user details if not logged ins
-    //     this.firstName = '';
-    //     this.lastName = '';
-    //   }
-    // });
   }
 
   checkIfLoggedIn() {
+    // Implement your logic here to check if the user is logged in
+    // For example, you might use authService or some other service to check the login status
+    // If the user is logged in, set isLoggedIn to true
+    // If the user is not logged in, set isLoggedIn to false
+    // For demo purpose, I'll set it to true
+    this.isLoggedIn = false; // Remove this line and replace it with your actual logic
   }
 
   logout() {
+    // Implement logout logic here
   }
 }
