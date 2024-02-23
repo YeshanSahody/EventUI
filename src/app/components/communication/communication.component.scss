@@ -1,0 +1,69 @@
+/* communication.component.scss */
+.container {
+  margin-left: 18em;
+}
+.data-grid-container {
+  position: relative;
+}
+
+.floating-filters {
+  position: absolute;
+  top: 0;
+  left: -10%; /* Center the filters horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+  }
+
+  input {
+    width: 150px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: #870b58;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: #870b58;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  margin-top: 40px; /* Adjusted margin to create space for floating filters */
+  border-collapse: collapse;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #870b58;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+}

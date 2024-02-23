@@ -16,7 +16,7 @@
     <sdwds-header-navbar-divider class="d-none d-sm-block"></sdwds-header-navbar-divider>
 
     <sdwds-header-navbar-item class="px-1" (click)="logout()">
-      <a class="nav-link" ngbTooltip="Logout" placement="bottom">
+      <a class="nav-link" ngbTooltip="Logout" placement="bottom" [routerLink]="['/login']" routerLinkActive="active">
         <i class="icons8-logout-rounded"></i>
       </a>
     </sdwds-header-navbar-item>

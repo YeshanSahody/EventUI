@@ -23,6 +23,17 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHeaderProfileLinkComponent, SdwdsHeaderProfileListComponent, SdwdsHeaderProfileSelectComponent, } from '@sdworx/sdwds/header-profile';
 import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { FinanceComponent } from './components/finance/finance.component';
+import { EventsComponent } from './components/events/events.component';
+import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
+import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { EventDisplayComponent } from './components/event-display/event-display.component';
+import { LoginComponent } from './components/login/login.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +43,16 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
     SidebarComponent,
     AnalyticsChartsComponent,
     AnalyticsComponent,
+    MyprofileComponent,
+    FinanceComponent,
+    TeamLeadersComponent,
+    GroupLeadersComponent,
+    ReportsComponent,
+    EventDisplayComponent,
+    SearchBarComponent,
+    SignUpComponent
   ],
+
   imports: [
     HighchartsChartModule,
     CommonModule,
@@ -79,3 +99,5 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 export class AppModule {
   applicationName: string = 'SD events';
 }
+export class SignUpModule { }
+

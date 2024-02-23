@@ -12,9 +12,9 @@
         <h2 class="text-center mb-4 fs-1">Login</h2>
         <form (ngSubmit)="onSubmit()">
           <div class="mb-3">
-            <label for="email" class="form-label fw-bold fs-5">E-mail</label>
+            <label for="email" class="form-label fw-bold fs-5">Username</label>
             <input type="email" class="form-control" id="email" formControlName="email" required
-              placeholder="your.name@sdworx.com">
+              placeholder="Enter your username">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label fw-bold fs-5">Password</label>
@@ -36,7 +36,7 @@
         </form>
 
         <div class="mt-3 text-center me-3">
-          <p> If you don't have an account yet, now is the perfect time to create one <a href="#" data-toggle="modal"
+          <p> If you don't have an account yet, now is the perfect time to create one <a href="#/sign-up" data-toggle="modal"
               data-target="#signupModal">Sign up</a></p>
         </div>
 
