@@ -10,13 +10,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
  
   endpoints: { [endpoint: string]: string | any } = {
-    usersList: '/api/Registration',
-    addUser: '/api/Registration',
-    userDetails: (id: any) => `/api/Registration/${id}`,
-    editUser: (id: any ) => `/api/Registration/${id}`,        
-    deleteUser: (id: any) => `/api/Registration/${id}`,
-    login: '/api/Authentication/login',
-
+    login: `${this.baseUrl}Authentication/login`
   };
  
   request(
@@ -36,10 +30,4 @@ export class ApiService {
 }
  
 export type endpointType =
-  | 'usersList'
-  | 'addUser'
-  | 'userDetails'
-  | 'editUser'
-  | 'deleteUser'
-  | 'login'
- ;
+  | 'login';

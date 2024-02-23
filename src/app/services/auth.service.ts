@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
-import { UserResponse } from 'src/app/models/user/user-response';
+import { UserResponse } from '../../app/models/user-response';
 @Injectable({
   providedIn: 'root',
 })
@@ -18,16 +18,13 @@ export class AuthService {
     const decodedToken = this.jwtHelperService.decodeToken(result['token']);
     if (decodedToken) {
       const userObject: UserResponse = {
-        userID: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
-        username: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
-        password: decodedToken['password'],
+        Id: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
+        UserName: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+        Password: decodedToken['password'],
         role: decodedToken['role'],
-        email: decodedToken['email'],
-        firstName: decodedToken['firstName'],
-        lastName: decodedToken['lastName'],
-        dateOfBirth: new Date(decodedToken['dateOfBirth']),
-        phone: decodedToken['phone'],
-        avatar: decodedToken['avatar']
+        Email: decodedToken['email'],
+        FirstName: decodedToken['firstName'],
+        LastName: decodedToken['lastName']
       };
       this.storageService.set('token', result['token']);
       this.storageService.set('user', userObject);

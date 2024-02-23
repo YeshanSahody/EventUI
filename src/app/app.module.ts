@@ -40,6 +40,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     AdminDashboardComponent,
     NavbarComponent,
     SidebarComponent,
