@@ -34,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassw
     EventDisplayComponent,
     SearchBarComponent,
     SignUpComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    FeedbackComponent
   ],
 
   imports: [
