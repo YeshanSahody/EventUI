@@ -1,7 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
-
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -14,6 +13,7 @@ export class AdminDashboardComponent implements AfterViewInit {
     console.log('Scrolling to top...');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor: string = 'chart';
   updateFlag: boolean = false;
@@ -139,9 +139,48 @@ export class AdminDashboardComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.createHighchartsChart();
+    this.createEventAnalysisPieChart(); // Call the new method
   }
 
   private createHighchartsChart() {
-    // You can customize this method to update the chart dynamically if needed
+    // Implement your Highcharts chart creation logic here
+  }
+
+  private createEventAnalysisPieChart() {
+    const overallStats = [
+      { name: 'Events Created', y: 10 },
+      { name: 'Registrations', y: 150 },
+      { name: 'Attendance', y: 120 },
+      { name: 'Interactions', y: 50 },
+      { name: 'Likes', y: 30 },
+      { name: 'Shares', y: 20 },
+      { name: 'Survey Feedback Responses', y: 50 }
+    ];
+  
+    // Create chart options object
+    const chartOptions: Highcharts.Options = {
+      chart: {
+        type: 'pie'
+      },
+      title: {
+        text: 'Overall Event Stats'
+      },
+      series: [{
+        name: 'Stats',
+        type: 'pie',
+        data: overallStats
+      }]
+    };
+  
+    // Ensure that the container element exists in the HTML template
+    const containerId = 'eventAnalysisPieChart';
+    const containerElement = document.getElementById(containerId);
+  
+    if (containerElement) {
+      // Use the correct container ID in the Highcharts.chart method
+      Highcharts.chart(containerId, chartOptions);
+    } else {
+      console.error(`Container element with ID '${containerId}' not found.`);
+    }
   }
 }
