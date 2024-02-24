@@ -1,0 +1,44 @@
+.feedback-form {
+    width: 50%;
+    margin: auto;
+  
+    h2 {
+      text-align: center;
+    }
+  
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  
+    input[type="text"],
+    select,
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  
+    button {
+      padding: 8px 20px;
+      background-color: #870b58;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px; /* Adjust the value as needed */
+    }
+  
+
+    
+    .like-dislike {
+      margin-bottom: 15px;
+  
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+  
