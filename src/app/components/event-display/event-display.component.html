@@ -1,29 +1,49 @@
-<!-- <app-search-bar></app-search-bar> -->
-<app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
 
-<div class="container">
-  <!-- Card for creating a new event -->
-  <div class="event-card create-event-card">
-    <div class="card-body">
-      <h5 class="card-title">Create New Event</h5>
-      <a href="#/event-registration" class="btn btn-primary">Create</a>
+<div class="page-container" [class.blur-effect]="selectedEvent">
+  <!-- Content of the entire page -->
+  <!-- <app-search-bar></app-search-bar> -->
+  <app-search-bar (searchEvent)="handleSearch($event)"></app-search-bar>
+
+  <div class="container">
+    <!-- Card for creating a new event -->
+    <div class="event-card create-event-card">
+      <div class="card-body">
+        <h5 class="card-title">Create New Event</h5>
+        <a href="#/event-registration" class="btn btn-primary">Create</a>
+      </div>
+    </div>
+
+    <!-- Display existing events -->
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let event of filteredEvents">
+        <div class="event-card">
+          <div class="image-container d-flex align-items-center">
+            <img [src]="event.imageUrl" alt="{{ event.title }} Image">
+          </div>
+          <div class="event-date">{{ event.date }}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ event.title }}</h5>
+            <p class="card-text">{{ event.description }}</p>
+            <!-- Learn More button -->
+            <button class="btn btn-primary" (click)="openEventDetails(event)">Learn More</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Display existing events -->
-  <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let event of filteredEvents">
-      <div class="event-card">
-        <div class="image-container d-flex align-items-center">
-          <img [src]="event.imageUrl" alt="{{ event.title }} Image">
-        </div>
-        <div class="event-date">{{ event.date }}</div>
-        <div class="card-body">
-          <h5 class="card-title">{{ event.title }}</h5>
-          <p class="card-text">{{ event.description }}</p>
-          <a href="#" class="btn btn-primary">Learn More</a>
-        </div>
-      </div>
+  <!-- Pop-out box for event details -->
+  <div class="event-details" *ngIf="selectedEvent">
+    <div class="event-details-content">
+      <h2>{{ selectedEvent.title }}</h2>
+      <p>{{ selectedEvent.description }}</p>
+      <p>Date: {{ selectedEvent.date }}</p>
+      <!-- Additional event details -->
+      <p>Location: {{ selectedEvent.location }}</p>
+      <p>Time: {{ selectedEvent.time }}</p>
+      <p>Organizer: {{ selectedEvent.organizer }}</p>
+      <!-- Close button -->
+      <button class="btn btn-primary" (click)="closeEventDetails()">Close</button>
     </div>
   </div>
 </div>
