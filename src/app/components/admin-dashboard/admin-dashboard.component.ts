@@ -163,8 +163,9 @@ export class AdminDashboardComponent implements AfterViewInit {
         type: 'pie'
       },
       title: {
-        text: 'Overall Event Stats'
+        text: 'Overall<br> Event Stats'
       },
+      colors: ['#e94e0f', '#870b58', '#e4003a', '#f8ad07','#e94e0f', '#870b58', '#e4003a'],
       series: [{
         name: 'Stats',
         type: 'pie',

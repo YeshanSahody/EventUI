@@ -15,13 +15,13 @@ export class ReportsComponent {
 
     switch (team) {
       case 'FunAtWork':
-        url = 'path_to_fun_at_work_reports';
+        url = '#/analytics';
         break;
       case 'PayBackTeam':
-        url = 'path_to_payback_team_reports';
+        url = '#/analytics';
         break;
       case 'HRTeam':
-        url = 'path_to_hr_team_reports';
+        url = '#/analytics';
         break;
       default:
         url = '';

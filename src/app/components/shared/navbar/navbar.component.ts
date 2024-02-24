@@ -14,7 +14,7 @@ export class NavbarComponent {
   ngOnInit() {
     this.checkIfLoggedIn();
 
-    this.firstName = "Ekantesh";
+    this.firstName = "SDW Crew";
   }
 
   checkIfLoggedIn() {
