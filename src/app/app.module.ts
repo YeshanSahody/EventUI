@@ -33,8 +33,11 @@ import { EventDisplayComponent } from './components/event-display/event-display.
 import { LoginComponent } from './components/login/login.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { CardListTemplateComponent } from './components/shared/card-list-template/card-list-template.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -54,13 +57,18 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     EventDisplayComponent,
     SearchBarComponent,
     SignUpComponent,
+    EventRegistrationComponent,
     ForgetpasswordComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CardListTemplateComponent,
+    ModalComponent,
+    
   ],
 
   imports: [
     HighchartsChartModule,
     CommonModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -85,6 +93,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     SdwdsHeaderProfileSelectComponent,
     SdwdsHeaderProfileListComponent,
     NgbDropdownModule,
+    
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
