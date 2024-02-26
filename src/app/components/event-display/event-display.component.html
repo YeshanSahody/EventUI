@@ -10,38 +10,33 @@
           <a href="#/event-registration" class="btn btn-primary">Create</a>
         </div>
       </div>
-    <div class="row">
 
-      
-      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let event of filteredEvents">
-        
-        <div class="event-card">
-          
-          <div class="image-container d-flex align-items-center">
-            <img [src]="event?.imageUrl" alt="{{ event?.title }} Image">
-          </div>
-          <div class="event-date">{{ event?.date }}</div>
-          <div class="card-body">
-            <h5 class="card-title">{{ event?.title }}</h5>
-            <p class="card-text">{{ event?.description }}</p>
-            <!-- Learn More button -->
-            <button class="btn btn-primary" (click)="openEventDetails(event)">Learn More</button>
-          </div>
-          <!-- Display event details -->
-          <div class="event-details" *ngIf="selectedEvent === event">
-            <div class="event-details-content">
-              <h2>{{ selectedEvent.title }}</h2>
-              <p>{{ selectedEvent.description }}</p>
-              <p>Date: {{ selectedEvent.date }}</p>
-              <p>Location: {{ selectedEvent.location }}</p>
-              <p>Time: {{ selectedEvent.time }}</p>
-              <p>Organizer: {{ selectedEvent.organizer }}</p> 
-              <!-- Close button -->
-              <button class="btn btn-primary" (click)="closeEventDetails()">Close</button>
+      <div class="card-container mb-5">
+        <div class="row row-cols-3 g-4">
+            <div class="col" *ngFor="let item of filteredEvents;let i=index">
+                <div class="card h-100" [ngClass]="{'bg-success':!(i%2),'bg-danger':i%2}" >
+                    <img [src]="item.event_Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        {{item.eventName}} 
+                        <app-modal [item]="item"></app-modal>
+                      </h5>
+                      <p class="card-text">{{item.description}}</p>
+                      <ng-template #btnDelete>
+                        <p>This is a <span class="text-danger">Delete</span> button.</p>
+                      </ng-template>
+                      <button class="btn btn-warning me-2" routerLink="/event-registration">
+                        <i class="fa fa-pencil me-2"></i>
+                        Edit
+                      </button>
+                      <a (click)="deleteEvent(item.eventName)" [tooltip]="btnDelete" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+    
+
+
   </div>
 </div>

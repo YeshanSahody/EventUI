@@ -1,121 +1,55 @@
-import { Component } from '@angular/core';
-import { BaseEvent } from '../../models/base-event.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { IEventModels } from 'src/app/models/eventRegistrationModels';
+import { ApiService } from 'src/app/services/api.service';
+import { DataService } from 'src/app/services/data.service';
+import { StorageService } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-event-display',
   templateUrl: './event-display.component.html',
-  styleUrls: ['./event-display.component.scss']
+  styleUrls: ['./event-display.component.scss'],
 })
-export class EventDisplayComponent {
-  events: BaseEvent[] = [
-    {
-      title: 'Fun @ Worx',
-      description: ' Have a good time...',
-      date: 'Jan 19, 2024',
-      imageUrl: 'assets/images/gaming.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'HR Team',
-      description: 'Hire mee!!...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/donation.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'Payback Team',
-      description: 'Donation collect ...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/fun.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'Fun @ Worx',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/sharingiscaring.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'HR Team',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/bg.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'Payback Team',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/guitar.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'Fun @ Worx',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/hiking.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'HR Team',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/press.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
-    {
-      title: 'Payback Team',
-      description: 'Description for Event 1...',
-      date: 'Jan 25, 2024',
-      imageUrl: 'assets/images/bg.jpg'
-      ,location: 'Event Venue 1',
-      time: '10:00 AM - 2:00 PM',
-      organizer: 'Organizer 1'
-    },
+export class EventDisplayComponent implements OnInit {
+  events: IEventModels[] = [];
+  filteredEvents: IEventModels[] = [];
+  selectedEvent: IEventModels | null = null;
+  @Input() list: any[] = [];
+  @Input() entity: string = ' ';
+  showCard: boolean = false;
 
-    // Add more events here...
-  ];
-  selectedEvent: BaseEvent | null = null; // Track the selected event
-  searchText: string = ''; // Track the search query
+  constructor(
+    private apiService: ApiService,
+    private storageService: StorageService,
+    private dataService :  DataService
+  ) {}
 
-  constructor() {}
-
-  // Method to handle the click event of "Learn More" button
-  openEventDetails(event: BaseEvent) {
-    this.selectedEvent = event;
+  ngOnInit(): void {
+    this.getEvents();
   }
 
-  // Method to close the pop-out box
-  closeEventDetails() {
-    this.selectedEvent = null;
+  getEvents() {
+    this.apiService.request('viewAllEvent', 'get').subscribe((event: any) => {
+      console.log('Fetching Event from server', event);
+      this.events = event;
+      this.filteredEvents = this.events;
+    });
   }
 
-  // Method to handle the search event
-  handleSearch(query: string) {
-    this.searchText = query;
+  deleteEvent(eventName: string) {
+    console.log('eventName ', eventName);
+    this.events = this.events.filter((event) => event.eventName !== eventName);
+    this.filteredEvents = this.events;
+    this.storageService.set('events', this.events);
   }
 
-  // Computed property to filter events based on search query
-  get filteredEvents(): BaseEvent[] {
-    return this.events.filter(event =>
-      event.title.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+  handleSearch(searchQuery: string) {
+    if (searchQuery.trim() !== '') {
+      this.filteredEvents = this.events.filter((event) =>
+        event.eventName.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    } else {
+      this.filteredEvents = this.events;
+    }
   }
 }
