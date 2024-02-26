@@ -92,26 +92,10 @@ export class EventDisplayComponent {
 
     // Add more events here...
   ];
-
-  filteredEvents: BaseEvent[] = []; // Array to store filtered events
   selectedEvent: BaseEvent | null = null; // Track the selected event
-  
+  searchText: string = ''; // Track the search query
 
-  constructor() {
-    // Initialize filteredEvents with all events initially
-    this.filteredEvents = this.events;
-  }
-
-  handleSearch(searchQuery: string) {
-    if (searchQuery.trim() !== '') {
-      this.filteredEvents = this.events.filter(event =>
-        event.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    } else {
-      // If search query is empty, show all events
-      this.filteredEvents = this.events;
-    }
-  }
+  constructor() {}
 
   // Method to handle the click event of "Learn More" button
   openEventDetails(event: BaseEvent) {
@@ -121,5 +105,17 @@ export class EventDisplayComponent {
   // Method to close the pop-out box
   closeEventDetails() {
     this.selectedEvent = null;
+  }
+
+  // Method to handle the search event
+  handleSearch(query: string) {
+    this.searchText = query;
+  }
+
+  // Computed property to filter events based on search query
+  get filteredEvents(): BaseEvent[] {
+    return this.events.filter(event =>
+      event.title.toLowerCase().includes(this.searchText.toLowerCase())
+    );
   }
 }

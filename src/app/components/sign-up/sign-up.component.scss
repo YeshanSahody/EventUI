@@ -1,0 +1,16 @@
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 576px) {
+    .registration-form {
+      padding: 0 15px;
+    }
+  }
+  
+  .registration-form {
+    max-width: 500px; /* Increased width */
+    margin: 50px auto; /* Centering the form vertically and horizontally */
+    padding: 0 -40px; /* Added padding */
+}

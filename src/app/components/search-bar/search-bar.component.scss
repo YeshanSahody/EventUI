@@ -12,14 +12,18 @@
 // }
 .notification-data {
   position: absolute;
-  top: 100%;
+  top: 100%; // Position below the cards
   right: 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  z-index: 999; // Set a higher z-index to ensure it displays over the cards
 }
+
+
+
 
 .notification {
   display: flex;
