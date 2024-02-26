@@ -1,38 +1,21 @@
 <div class="feedback-form">
-    <h2>Event Feedback Form</h2>
-    <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
-      <label for="nickname">User Name:</label>
-      <input type="text" id="nickname" name="nickname" [(ngModel)]="nickname" required>
-  
-      <label for="stars">Stars Rating:</label>
-      <select id="stars" name="stars" [(ngModel)]="stars" required>
-        <option value="1">1 star</option>
-        <option value="2">2 stars</option>
-        <option value="3">3 stars</option>
-        <option value="4">4 stars</option>
-        <option value="5">5 stars</option>
-      </select>
-  
-      <label for="textFeedback">Text Feedback:</label>
-      <textarea id="textFeedback" name="textFeedback" [(ngModel)]="textFeedback"></textarea>
-  
-      <label for="imageUpload">Upload Images:</label>
-      <input type="file" id="imageUpload" name="imageUpload" (change)="onImageUpload($event)" multiple>
-  
-      <label for="fileUpload">Upload Files:</label>
-      <input type="file" id="fileUpload" name="fileUpload" (change)="onFileUpload($event)" multiple>
-  
-      <div class="like-dislike">
-        <label>Overall Experience:</label>
-        <br>
-        <button type="button" (click)="like()">Like</button>
-        <button type="button" (click)="dislike()">Dislike</button>
-      </div>
-  
-      <label for="improvement">Suggestions for Improvement:</label>
-      <textarea id="improvement" name="improvement" [(ngModel)]="improvement"></textarea>
-  
-      <button type="submit" [disabled]="!feedbackForm.valid">Submit</button>
-    </form>
-  </div>
-  
+  <h2>Event Feedback Form</h2>
+  <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
+    <label for="feedbackID">Feedback :</label>
+    <input type="text" id="feedbackID" name="feedbackID" [(ngModel)]="feedbackID" required>
+    
+    <label for="eventID">Event :</label>
+    <input type="text" id="eventID" name="eventID" [(ngModel)]="eventID" required>
+    
+    <label for="userID">User :</label>
+    <input type="text" id="userID" name="userID" [(ngModel)]="userID" required>
+
+    <label for="DescriptionText">Description :</label>
+    <textarea id="DescriptionText" name="DescriptionText" [(ngModel)]="DescriptionText" required></textarea>
+
+    <label for="DescriptionDate"> Date:</label>
+    <input type="date" id="DescriptionDate" name="DescriptionDate" [(ngModel)]="DescriptionDate" required>
+
+    <button type="submit" [disabled]="!feedbackForm.valid">Submit</button>
+  </form>
+</div>

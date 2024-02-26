@@ -6,44 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./feedback.component.scss']
 })
 export class FeedbackComponent {
-  nickname: string = '';
-  stars: number = 0;
-  textFeedback: string = '';
-  images: File[] = [];
-  files: File[] = [];
-  overallExperience: string = '';
-  improvement: string = '';
+  feedbackID: string = '';
+  eventID: string = '';
+  userID: string = '';
+  DescriptionText: string = '';
+  DescriptionDate: string = '';
 
   submitFeedback() {
     // Handle form submission, e.g., sending feedback to backend
     console.log('Feedback submitted:', {
-      nickname: this.nickname,
-      stars: this.stars,
-      textFeedback: this.textFeedback,
-      images: this.images,
-      files: this.files,
-      overallExperience: this.overallExperience,
-      improvement: this.improvement
+      feedbackID: this.feedbackID,
+      eventID: this.eventID,
+      userID: this.userID,
+      DescriptionText: this.DescriptionText,
+      DescriptionDate: this.DescriptionDate
     });
-  }
-
-  onImageUpload(event: any) {
-    this.images = event.target.files;
-  }
-
-  onFileUpload(event: any) {
-    this.files = event.target.files;
-  }
-
-  like() {
-    this.overallExperience = 'Like';
-  }
-
-  dislike() {
-    this.overallExperience = 'Dislike';
-  }
-
-  setStars(rating: number) {
-    this.stars = rating;
   }
 }

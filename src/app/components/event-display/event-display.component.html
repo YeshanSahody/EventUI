@@ -30,12 +30,12 @@
           <!-- Display event details -->
           <div class="event-details" *ngIf="selectedEvent === event">
             <div class="event-details-content">
-              <h2>{{ selectedEvent?.title }}</h2>
-              <p>{{ selectedEvent?.description }}</p>
-              <p>Date: {{ selectedEvent?.date }}</p>
-              <p>Location: {{ selectedEvent?.location }}</p>
-              <p>Time: {{ selectedEvent?.time }}</p>
-              <p>Organizer: {{ selectedEvent?.organizer }}</p>
+              <h2>{{ selectedEvent.title }}</h2>
+              <p>{{ selectedEvent.description }}</p>
+              <p>Date: {{ selectedEvent.date }}</p>
+              <p>Location: {{ selectedEvent.location }}</p>
+              <p>Time: {{ selectedEvent.time }}</p>
+              <p>Organizer: {{ selectedEvent.organizer }}</p> 
               <!-- Close button -->
               <button class="btn btn-primary" (click)="closeEventDetails()">Close</button>
             </div>
