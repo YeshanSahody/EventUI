@@ -5,12 +5,13 @@
 
     <nav id="sdwds-grid-nav" *ngIf="showSidebar">
         <app-sidebar></app-sidebar>
-        
     </nav>
 
     <div id="sdwds-grid-content" class="container-fluid sd-scrollbar">
         <div class="mb-4">
             <router-outlet></router-outlet>
+            <app-admin-dashboard></app-admin-dashboard>
+
         </div>
     </div>
 </div>
