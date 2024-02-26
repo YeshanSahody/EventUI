@@ -2,9 +2,21 @@
 
 <div class="page-container">
   <div class="container">
+    <div class="container">
+      <!-- Card for creating a new event -->
+      <div class="event-card create-event-card">
+        <div class="card-body">
+          <h5 class="card-title">Create New Event</h5>
+          <a href="#/event-registration" class="btn btn-primary">Create</a>
+        </div>
+      </div>
     <div class="row">
+
+      
       <div class="col-lg-4 col-md-6 mb-4" *ngFor="let event of filteredEvents">
+        
         <div class="event-card">
+          
           <div class="image-container d-flex align-items-center">
             <img [src]="event?.imageUrl" alt="{{ event?.title }} Image">
           </div>
