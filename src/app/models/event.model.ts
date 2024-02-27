@@ -8,7 +8,4 @@ export interface ICalendarEvent {
   allDay: boolean;
   classNames: string[];
   extendedProps: IExtendedProps;
-  //capacity
-  //location
-  //
 }

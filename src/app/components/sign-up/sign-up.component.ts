@@ -51,7 +51,7 @@ export class SignUpComponent implements OnInit {
       console.log(result)
       if(result) {
         Swal.fire('Success', 'You have successfully registered', 'success').then(swalResult => {
-          if(swalResult.value) this.router.navigate(['\event-display'])
+          if(swalResult.value) this.router.navigate(['\login'])
         })
       }
     })
