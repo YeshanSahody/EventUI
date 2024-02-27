@@ -1,0 +1,16 @@
+<button class="btn btn-light" (click)="openModal(modalTemplate)">
+    view
+</button>
+
+<ng-template #modalTemplate>
+    <div class="modal-header">
+        <h5 class="modal-title">{{item?.eventName}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+    </div>
+    <div class="modal-body">
+        <img [src]="item?.event_Image" alt="{{item?.name}}" class="w-75 card-img-top">
+        <p>Event Description: {{item?.description}}</p>
+        <p>Objective: {{item?.Objective}}</p>
+        <p>Start date: {{item?.startDate}}</p>
+        <p>Start Time: {{item?.starting_Time}}</p>
+    </div>
