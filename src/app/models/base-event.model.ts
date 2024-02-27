@@ -1,9 +1,20 @@
 export interface BaseEvent {
-  title: string;
+  
+    eventName : string;
   description: string;
-  date: string;
-  imageUrl: string;
-  location: string; // comma added here
-  time: string; // comma added here
-  organizer: string; // comma added here
+  starting_Time:string;
+  ending_Time: string;
+  objective: string;
+  status: string;
+  type: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  attachment: string;
+  event_Image: string;
+  sponsors: string;
+  rating: number;
+  outcome: string;
+  capacity: number;
+  
 }

@@ -30,7 +30,7 @@ export class LoginComponent {
    private authService : AuthService,) {
     this.loginForm = this.fb.group({
       username: [''],
-      password: ['', [Validators.required, Validators.minLength(8), containsSpecialCharacter]]
+      password: ['']
     });
   }
 
@@ -44,7 +44,7 @@ export class LoginComponent {
        // this.authService.login(result);
        if(result['status'] === "Success"){
         console.log("test");
-        this.router.navigate(['#/event-display']);
+        this.router.navigate(['/event-display']);
        }
       })
     } else {

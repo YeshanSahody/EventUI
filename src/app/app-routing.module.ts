@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'feedback', component: FeedbackComponent },
+  { path: 'login', component: LoginComponent },
 
   
   { path: '**', redirectTo: '', pathMatch: 'full' },
