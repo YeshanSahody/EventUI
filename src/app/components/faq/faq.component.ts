@@ -13,6 +13,6 @@ export class FaqComponent {
   constructor(
     private sanitizer: DomSanitizer
   ) {
-    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl("/assets/pdf/SD_Postman_Exercises.pdf");
+    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl("/assets/pdf/Teams Events Management System PROJECT DOCUMENTATION 1.pdf");
   }
 }

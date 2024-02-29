@@ -43,7 +43,7 @@
     }
 </style>
 
-<!-- <div>
+<div>
     <div id="sdwds-grid-content">
         <div class="container">
             <div class="row">
@@ -107,7 +107,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-center mb-3"></h5>
                             <div id="eventAnalysisPieChart"></div> <!-- Container for the pie chart -->
-                        <!-- </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -115,26 +115,30 @@
             </div>
         </div>
     </div>
-</div> --> 
+</div> 
 
         <br><br><br>
-        <!-- charts.component.html -->
+
+        <h1 style="text-align: center; font-weight: bold;">Event Reports</h1>
+        <br><br><br>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Bar Chart -->
+                    Bar Chart
                     <highcharts-chart [Highcharts]="Highcharts" [options]="barChartOptions"
                         style="width: 80%; height: 250px; display: block;"></highcharts-chart>
                 </div>
                 <div class="col-md-6">
-                    <!-- Line Chart -->
+                    
                     <highcharts-chart [Highcharts]="Highcharts" [options]="lineChartOptions"
                         style="width: 80%; height: 250px; display: block;"></highcharts-chart>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <!-- Area Chart -->
+                    Area Chart
                     <highcharts-chart [Highcharts]="Highcharts" [options]="areaChartOptions"
                         style="width: 80%; height: 250px; display: block;"></highcharts-chart>
                 </div>
