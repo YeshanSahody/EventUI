@@ -14,7 +14,9 @@ export class ApiService {
   endpoints: { [endpoint: string]: string | any } = {
     addEvent: `${this.baseUrl}/eventRegistration/addEvent`,
     viewAllEvent: `${this.baseUrl}/eventRegistration/viewAllEvent`,
-    login: `${this.baseUrl}/Authentication/login`
+    login: `${this.baseUrl}/Authentication/login`,
+    addFeedback: `${this.baseUrl}/Feedback/addFeedback`,   //https://localhost:7158/api/Feedback
+    addUser: `${this.baseUrl}/UserRegistration/postUser`,
   };
 
  getEvents(): Observable<any>{
@@ -38,5 +40,5 @@ export class ApiService {
   }
 }
  
-export type endpointType = 'addEvent' | 'eventDetails' | 'viewAllEvent' | 'login';
+export type endpointType = 'addEvent' | 'eventDetails' | 'viewAllEvent' | 'login' | 'addFeedback' | 'addUser';
  

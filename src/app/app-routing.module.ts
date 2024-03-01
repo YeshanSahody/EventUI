@@ -18,7 +18,6 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -39,10 +38,6 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetpasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'feedback', component: FeedbackComponent },
-  { path: 'pagenotfound', component: PagenotfoundComponent },
-  { path: 'feedback', component: FeedbackComponent },
-
-
 
   
   { path: '**', redirectTo: '', pathMatch: 'full' },

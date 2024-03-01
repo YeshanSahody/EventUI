@@ -1,16 +1,16 @@
 <div class="feedback-form">
   <h2>Event Feedback Form</h2>
   <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
-    <label for="feedbackID">Feedback Overall: (Positive/Neutral/Negative) </label>
+    <label for="feedbackID">Feedback :</label>
     <input type="text" id="feedbackID" name="feedbackID" [(ngModel)]="feedbackID" required>
     
-    <label for="eventID">Event Name:</label>
+    <label for="eventID">Event :</label>
     <input type="text" id="eventID" name="eventID" [(ngModel)]="eventID" required>
     
-    <label for="userID">Username :</label>
+    <label for="userID">User :</label>
     <input type="text" id="userID" name="userID" [(ngModel)]="userID" required>
 
-    <label for="DescriptionText">Feedback Description :</label>
+    <label for="DescriptionText">Description :</label>
     <textarea id="DescriptionText" name="DescriptionText" [(ngModel)]="DescriptionText" required></textarea>
 
     <label for="DescriptionDate"> Date:</label>

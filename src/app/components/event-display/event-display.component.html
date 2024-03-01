@@ -13,28 +13,29 @@
 
       <div class="card-container mb-5">
         <div class="row row-cols-3 g-4">
-            <div class="col" *ngFor="let item of filteredEvents;let i=index">
-                <div class="card h-100" [ngClass]="{'bg-success':!(i%2),'bg-danger':i%2}" >
-                    <img [src]="item.event_Image" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        {{item.eventName}} 
-                        <app-modal [item]="item"></app-modal>
-                      </h5>
-                      <p class="card-text">{{item.description}}</p>
-                      <ng-template #btnDelete>
-                        <p>This is a <span class="text-danger">Delete</span> button.</p>
-                      </ng-template>
-                      <button class="btn btn-warning me-2" routerLink="/event-registration">
-                        <i class="fa fa-pencil me-2"></i>
-                        Edit
-                      </button>
-                      <a (click)="deleteEvent(item.eventName)" [tooltip]="btnDelete" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
+          <div class="col-md-4" *ngFor="let item of filteredEvents; let i=index">
+            <div class="card mb-4">
+              <img src="../../../assets/images/spark/Motion-3.jpg" class="card-img-top" alt="Event Image">
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ item.eventName }}
+                  <app-modal [item]="item"></app-modal>
+                </h5>
+                <p class="card-text">{{ item.description }}</p>
+                <ng-template #btnDelete>
+                  <p>This is a <span class="text-danger">Delete</span> button.</p>
+                </ng-template>
+                <button class="btn btn-warning me-2" routerLink="/event-registration">
+                  <i class="fa fa-pencil me-2"></i>
+                  Edit
+                </button>
+                <a (click)="deleteEvent(item.eventName)" [tooltip]="btnDelete" class="btn btn-danger">Delete</a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+      
     
 
 
