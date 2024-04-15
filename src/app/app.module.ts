@@ -7,7 +7,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppRoutingModule } from './app-routing.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AppComponent } from './app.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SdwdsHeaderComponent, SdwdsHeaderNavbarComponent, SdwdsHeaderNavbarDividerComponent, SdwdsHeaderNavbarItemComponent } from '@sdworx/sdwds/header';
@@ -21,47 +21,34 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SdwdsHeaderProfileButtonComponent, SdwdsHeaderProfileComponent, SdwdsHeaderProfileLinkComponent, SdwdsHeaderProfileListComponent, SdwdsHeaderProfileSelectComponent, } from '@sdworx/sdwds/header-profile';
-import { AnalyticsChartsComponent } from './components/analytics-charts/analytics-charts.component';
-import { AnalyticsComponent } from './components/analytics/analytics.component';
-import { MyprofileComponent } from './components/myprofile/myprofile.component';
-import { FinanceComponent } from './components/finance/finance.component';
-import { EventsComponent } from './components/events/events.component';
-import { TeamLeadersComponent } from './components/team-leaders/team-leaders.component';
-import { GroupLeadersComponent } from './components/group-leaders/group-leaders.component';
-import { ReportsComponent } from './components/reports/reports.component';
-import { EventDisplayComponent } from './components/event-display/event-display.component';
-import { LoginComponent } from './components/login/login.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { EventRegistrationComponent } from './components/event-registration/event-registration.component';
-import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { FeedbackComponent } from './components/feedback/feedback.component';
-import { CardListTemplateComponent } from './components/shared/card-list-template/card-list-template.component';
+
+
+
 import { ModalComponent } from './modal/modal.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { DocumentationGeneratorComponent } from './components/documentationgenerator/documentationgenerator.component';
+import { SecurityCodeScannerComponent } from './components/securitycodescanner/securitycodescanner.component';
+import { CodeOptimizerComponent } from './components/codeoptimizer/codeoptimizer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    AdminDashboardComponent,
+    
+    
     NavbarComponent,
     SidebarComponent,
-    AnalyticsChartsComponent,
-    AnalyticsComponent,
-    MyprofileComponent,
-    FinanceComponent,
-    TeamLeadersComponent,
-    GroupLeadersComponent,
-    ReportsComponent,
-    EventDisplayComponent,
-    SearchBarComponent,
-    SignUpComponent,
-    EventRegistrationComponent,
-    ForgetpasswordComponent,
-    FeedbackComponent,
-    CardListTemplateComponent,
+   
+    
+  
+    
+   
+    
     ModalComponent,
+    HomepageComponent,
+    DocumentationGeneratorComponent,
+    SecurityCodeScannerComponent,
+    
     
   ],
 

@@ -1,0 +1,44 @@
+.documentation-generator {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    .upload-section {
+      margin-bottom: 20px;
+  
+      input[type="file"] {
+        display: none;
+      }
+  
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+  

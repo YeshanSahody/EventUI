@@ -1,0 +1,13 @@
+<div class="documentation-generator">
+    <h1>Documentation Generator</h1>
+    <p>Welcome to the Documentation Generator! This tool allows you to upload your full codebase in a zip format and generate documentation from it.</p>
+    
+    <div class="upload-section">
+      <input type="file" (change)="onFileSelected($event)" accept=".zip" />
+      <button (click)="submitZip()">Submit</button>
+    </div>
+  
+    <!-- Display any messages or errors here -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+  

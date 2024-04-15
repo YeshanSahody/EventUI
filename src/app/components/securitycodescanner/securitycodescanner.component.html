@@ -1,0 +1,16 @@
+<div class="security-code-scanner">
+    <h1>Security Code Scanner</h1>
+    <p>Welcome to the Security Code Scanner! This tool allows you to upload your full codebase in a zip format and scan it for security vulnerabilities.</p>
+    
+    <div class="upload-section">
+      <input type="file" (change)="onFileSelected($event)" accept=".zip" />
+      <button (click)="submitZip()">Submit</button>
+    </div>
+  
+    <!-- Display any messages or errors here -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <!-- Button to download the security report -->
+    <button class="download-report" (click)="downloadReport()">Download Report</button>
+  </div>
+  
